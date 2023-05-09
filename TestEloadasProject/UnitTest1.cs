@@ -1,6 +1,6 @@
 namespace TestEloadasProject
 {
-    public class Tests
+    public class EloadasTests
     {
         [SetUp]
         public void Setup()
@@ -8,9 +8,12 @@ namespace TestEloadasProject
         }
 
         [Test]
-        public void Test1()
+        public void Kontruktor_NegativSorokSzama_ArgumentException()
         {
-            Assert.Pass();
+            int sorokSzama = -5;
+            int helyekSzama = 10;
+
+            Assert.Throws<ArgumentException>(() => new Eloadas(sorokSzama, helyekSzama));
         }
     }
 }
